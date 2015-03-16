@@ -1,0 +1,10 @@
+WebSockets also provide an elegant implementation of push technology.  
+Push technology refers to communication that is initiated by the server.  
+This contrasts the typical Web communication model of client initiated communication (also known as pull technology).  
+Prior to HTML5, push technology was implemented through a number of hacks such as long polling.  
+In long polling, the client makes an AJAX request to the server.If the server doesn’t have any data to return, 
+it simply leaves the connection open.  
+Once data becomes available, the server sends it back to the client.  
+The client then immediately makes another request, ensuring that an open connection is always available for push data.  
+WebSockets make these techniques obsolete by providing true push technology. 
+The additional overhead of repeatedly polling the server is also mitigated by using WebSockets.

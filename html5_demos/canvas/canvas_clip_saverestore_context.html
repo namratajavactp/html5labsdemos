@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+  
+<canvas id="myCanvas" width="400" height="400">Your browser does not support the canvas tag.</canvas>
+
+<script type="text/javascript">
+var canvas=document.getElementById('myCanvas');
+var c=canvas.getContext('2d');
+  
+c.strokeStyle = "black";
+c.lineWidth = 10;
+c.fillStyle = "red";
+
+// draw rect the first time
+c.fillRect(0,0,400,400);
+
+  // Save current context
+c.save();
+
+// create triangle path
+c.beginPath();
+c.moveTo(200,100);
+c.lineTo(300,300);
+c.lineTo(100,300);
+c.closePath();
+
+// stroke the triangle so we can see it
+c.stroke();
+
+// use triangle as clip, then fill rect in again with yellow
+c.clip();
+c.fillStyle = "yellow";
+c.fillRect(0,0,400,400);
+  
+  // restore previous context, without the clipping triangle
+c.restore();
+</script>
+
+</body>
+</html>

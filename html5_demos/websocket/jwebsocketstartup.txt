@@ -1,0 +1,17 @@
+steps to start server:
+step1:
+set JAVA_HOME=C:\Program Files (x86)\Java\jdk1.7.0_01;
+
+step2:
+set JWEBSOCKET_HOME=D:\html5\websocket\jWebSocketServer-1.0-b30518\jWebSocket-1.0;
+
+step3:
+cd D:\html5\jWebSocketServer-1.0-b30518\jWebSocket-1.0\bin
+
+step4:
+jWebSocketServerlocal.bat
+
+
+
+steps to run client:
+open jWebSocketClient-1.0-b30518/jWebSocketClient-1.0/index.html in browser

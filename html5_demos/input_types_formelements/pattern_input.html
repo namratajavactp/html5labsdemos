@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<style>
+ input:focus:invalid { background-color: lightPink;}
+input:valid { background-color:lightGreen }
+input:required {border: 2px solid red;}
+input:optional {border: 2px solid green;}
+</style>
+</head>
+<body>
+  Enter a URL (default validation) : <input type="url" name="homepage" /><p>
+    Enter a URL (custom validation, must start with http, https or ftp) : <input 
+id="website" 
+name="url" 
+type="url"
+placeholder="http://www.domain.com" 
+pattern="(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.\/]*"/><p>
+
+  
+<label for="mysearch2">Enter your search string here : </label><input id="mysearch2" type="search" placeholder="search"><p>
+  
+  Please clic on the microphone icon and talk (Chrome only) : <input type="text" x-webkit-speech name="search_value " />
+
+
+</body>
+</html>

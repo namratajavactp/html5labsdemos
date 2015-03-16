@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<body>
+<header> <H1>Training Feedback Form</H1></header><br><br>
+
+//todo:put autocomplete on for the form inside the form tag
+<form action="">
+
+//todo:put placeholder attribute to denote that textbox is to enter firstname and lastname
+//todo:put pattern attribute to check that name should be atleast 3 characters long and should not include nos.
+  Name:<input type="text" name="fname"> 
+  Trainer Name: <input type="text" name="lname"><br>
+  
+
+  Date of Training: //todo:put date type to take date of training
+  E-mail: //todo:put email type to take emailid,ensure that its not autocompleted<br> 
+  <input type=------  name="email"        --------------="off">
+  
+  //todo:use datalist here to populate it with available trainings
+  Choose Training Subject:
+   <input list="SubjectList">
+  <datalist id="SubjectList">
+	<option value="HTML5">
+	<option value="JavaScript">
+	<option value="JSON">
+	<option value="jQuery">
+	<option value="Java">
+  </datalist>
+ 
+  
+  //todo:use number input type with min and max attributes to give rating from 1 to 10 with step of 2
+  Trainer Feedback Rating:
+  
+  Trainer Feedback<textarea rows="4" cols="50"> </textarea><br> 
+  
+  Because you have attended this training session we would like to send you a free tshirt
+  you can choose the color of Tshirt here!
+  //todo:use color  input type to choose a color
+
+    
+  <input type="submit">
+</form>
+<p>Fill in and submit the form.</p>
+
+please fill below details:
+//todo:use form element 'output' todo on the spot calculation of Total training hours
+<form oninput="....">
+Total training days:	        <input ....> x
+Training duration every day:	<input ....> =
+Total Training hours:	        <output ....>6</output>
+</form>
+</body>
+</html>

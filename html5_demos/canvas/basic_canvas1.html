@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+<canvas id="myCanvas" width="300" height="300" style="border:1px solid #d3d3d3;">
+
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script>
+
+
+function degreesToRadians(degrees)
+{
+    return (degrees * Math.PI)/180;
+}
+
+
+
+var c=document.getElementById("myCanvas");
+
+var context=c.getContext("2d");
+
+context.beginPath();
+
+//context.arc(150, 150, 50, 0, 2 * Math.PI, true);
+
+context.arc(100, 100, 75, 0, degreesToRadians(270), true);
+
+context.lineWidth = 5;
+
+context.stroke();
+
+context.fillStyle = "red";
+
+context.fill();
+</script>
+</body>
+</html>

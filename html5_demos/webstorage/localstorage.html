@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<body>
+ <div id="result"></div>
+ 
+<script>
+ 
+if(typeof(Storage)!=="undefined")
+  {
+
+   
+	  if (localStorage.lastname)
+	   {
+	      alert("localstorage has lastname"+localStorage.lastname);
+		  document.getElementById("result").innerHTML="Last name: " + localStorage.lastname;
+	  }
+	  else
+	  {
+	    alert("localstorage does not have lastname"+localStorage.lastname + " so we are adding");
+		localStorage.lastname="Smith";
+	  }
+  }
+  else
+  {
+
+    document.getElementById("result").innerHTML="Sorry, your browser does not support web storage...";
+  
+  }
+
+  </script>
+
+
+  </body>
+  </html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<body>
+    <div draggable="true">Ain't life a drag.</div>
+    
+	<div>Drop here.</div>
+
+	<div draggable="false">Ain't life a drag (not draggable).</div>
+	<div>Drop here selection.</div>
+
+
+	<script>
+  var div = document.getElementsByTagName('div')[0];
+  
+  div.ondragstart = function (event) {
+    //browsers may populate the text/html data type for you,
+    //but Firefox will not allow a drag without setting some data
+    event.dataTransfer.setData('text/plain','Hello ');
+  event.dataTransfer.effectAllowed = 'copyLink'; //copy or link
+
+  }
+
+
+
+  var droptarget = document.getElementsByTagName('div')[1];
+  
+  droptarget.ondragenter = droptarget.ondragover = function (event) {
+    event.preventDefault();
+  }
+  
+  droptarget.ondrop = function (event) {
+    event.preventDefault();
+    this.innerHTML = event.dataTransfer.dropEffect + ' ' +
+      event.dataTransfer.getData('text/plain');
+  };
+
+
+  var droptarget1 = document.getElementsByTagName('div')[3];
+  
+  droptarget1.ondragenter = droptarget1.ondragover = function (event) {
+    event.preventDefault();
+  }
+  
+  droptarget1.ondrop = function (event) {
+    event.preventDefault();
+    this.innerHTML = event.dataTransfer.getData('text');
+  };
+
+</script>
+</body></html>

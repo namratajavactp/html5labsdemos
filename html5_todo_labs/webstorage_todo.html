@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+function clickCounter()
+{
+//checks if web storage feature is supported in your browser
+if(typeof(Storage)!=="undefined")
+
+  {
+   //todo:fill in the blank to check if localstorage has clickcount variable in it
+   /* if web page is being accessed for first time then clikcount will not be present in localStorage */
+  if (localStorage.---------------)
+   {
+       /* it went inside if statement means web page is being accessed 2nd or 3rd time and clickcount is there in
+	   localstorage  */
+	   
+	  //todo:when page is accessed 2nd time onwards increment the clickcount variable for each access
+    localStorage.clickcount=Number(---------.---------)+1;
+	  }
+	  else
+	  {
+	  //todo:clickcount is not created,initialized and added to localStorage so fill in the blank to do so.
+          --------------.clickcount=1;
+  
+	  }
+	  
+	  //todo:fill in the blank to display the msg that - this web page is being accessed ... times
+	  document.getElementById("result").innerHTML="You have clicked the button " + ------------- + " time(s).";
+
+  }
+  
+else
+
+   {
+   //todo:web storage feature is not supported so mention in result element that browser does not support web storage 
+  document.getElementById("result").----------- ="Sorry, your browser does not support web storage...";
+ 
+	}
+}
+
+</script>
+
+ </head>
+  <body>
+  
+  //todo:fill in the blank to call the function that computes 'no. of times this web page is being accessed."
+<p><button onclick="---------()" type="button">Click me!</button></p>
+
+   
+   <hr> 
+   <h1> <div id="result"></div>  </h1>
+   </hr>
+   <p>Click the button to see the counter increase.</p>
+   <p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+  </body>
+
+ </html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html> 
+
+<html>
+<body> 
+<hr/>
+<h1>
+//insert a <p> tag with id = "add" here -so that advertisements can be displayed using web worker here
+<p id="-------"></p>
+
+</h1>
+<hr/>
+<button onclick="enableMute()" type="button">Mute sound</button><br>
+<button onclick="disableMute()" type="button">Enable sound</button> <br>
+<button onclick="checkMute()" type="button">Check muted status</button><br> 
+
+
+<div style="text-align:left"> 
+<br> 
+   
+   //video tag can also have 'loop' attribute in case you wish to loop this video
+  <video controls id="myVideo" width="420" autoplay  >
+
+        <source src="mov_bbb.mp4" type="video/mp4">
+	    <source src="mov_bbb.ogg" type="video/ogg">
+	  
+	     Your browser does not support HTML5 video.
+  
+  </video>
+
+</div>
+<p>Video courtesy of <a href="http://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.</p>
+
+<script>
+//start a worker thread embedding a script - "adds.js"
+var worker = new ---------;
+
+//fill in the blanks with suitable event to handle the data messages received from web worker thread
+worker.---------- = function(event) {
+	document.getElementById("add").innerHTML = event.data;
+}
+
+//fill in the blanks with suitable event to handle the error messages received from web worker thread in case of problem
+worker.-------- = function(error) {
+	document.getElementById("add").innerHTML = error.message;
+}
+
+//video code goes here - already explained in video todo assignment
+var seekflag=0;
+var volchangeflag=false;
+var vid = document.getElementById("myVideo");
+
+
+
+vid.onvolumechange = function() {
+    if(!volchangeflag)
+	{    alert("The volume has been changed"); 
+	      volchangeflag = true;
+	}
+	
+};
+
+//while seeking is going on 
+vid.onseeking = function() {
+  if(!seekflag)
+  {
+    alert("Seek operation began!");
+	seekflag=1;
+	}
+};
+
+vid.onplay = function() {
+    alert("The video has started to play, video duration is"+vid.duration);
+	
+};
+
+vid.onpause = function() {
+    alert("The video has been paused");
+};
+function enableMute() { 
+    vid.muted = true;
+} 
+
+function disableMute() { 
+    vid.muted = false;
+} 
+
+function checkMute() { 
+    alert(vid.muted);
+} 
+
+</script> 
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>Bar Graph Example</head>
+<title>Canvas</title>
+<body>
+<canvas id="cbargraph" width="600" height="600"></canvas>
+<script>
+var canvasObj=document.getElementById("cbargraph");
+var context =canvasObj.getContext("2d");
+
+//Actual data to be mapped on graph...
+var data = [ 16, 68, 20, 30, 54 ]; 
+
+//Draw vertical lines
+for (var x = 0.5; x < 500; x += 10) {
+  context.moveTo(x, 0);
+  context.lineTo(x, 375);
+}
+
+//Draw horizontal lines
+for (var y = 0.5; y < 375; y += 10) {
+  context.moveTo(0, y);
+  context.lineTo(500, y);
+}
+context.strokeStyle = "#eee";
+context.stroke();
+
+context.beginPath();
+// horizontal arrow
+context.moveTo(0, 400-40);
+context.lineTo(240, 400-40);
+context.moveTo(260, 400-40);
+context.lineTo(500, 400-40);
+context.moveTo(495, 400-35);
+context.lineTo(500, 400-40);
+context.lineTo(495, 400-45);
+
+
+//Vertical arrow
+context.moveTo(60, 0);
+context.lineTo(60, 153);
+context.moveTo(60, 173);
+context.lineTo(60, 375);
+context.moveTo(65, 5);
+context.lineTo(60, 0);
+context.lineTo(55, 5);
+
+
+context.strokeStyle = "#000";
+context.stroke();
+
+//write 'x' and 'y' text
+context.font = "bold 12px sans-serif";
+
+context.fillText("x", 243, 363);
+context.fillText("y", 58, 165);
+
+
+
+context.textBaseline = "top";
+context.fillText("( 0 , 0 )", 8, 5);
+
+context.textAlign = "right";
+context.textBaseline = "bottom";
+context.fillText("( 500 , 375 )", 492, 377);
+
+
+//draw bars representing data using some scale
+context.fillStyle = "pink"; 
+for(var i=0; i<data.length; i++) { 
+    var dp = data[i]; 
+    context.fillRect(65 + i*95, 389-dp*5 - 30 , 40, dp*5); 
+} 
+
+</script>
+</body>
+</html>

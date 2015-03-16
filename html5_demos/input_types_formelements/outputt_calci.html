@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<form onsubmit="return false" oninput="amount.value = (hours.valueAsNumber * rate.valueAsNumber) + ((hours.valueAsNumber * rate.valueAsNumber) * vat.valueAsNumber)">
+  <legend>Invoice</legend>
+
+  <p><label for="hours">Number of hours</label>
+  <input type="number" min="0" id="hours" name="hours"></p>
+
+  <p><label for="rate">Rate</label>
+  <span>rs.</span><input type="number" min="0" id="rate" name="rate"></p>
+
+  <p><label for="vat">VAT</label>
+  <input type="number" min="0" id="vat" value="0.20" name="vat"></p>
+
+  <p>Total: <strong>rs.<output name="amount" for="hours rate vat">0</output></strong></p>
+</form>
+</body>
+</html>
